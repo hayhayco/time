@@ -41,10 +41,7 @@ app.get("/time", function(req, res){
 app.get("/time/add", function(req, res){
   res.render("add");
 });
-//showing detail
-app.get("/time/:id", function(req, res){
-  res.render("detail");
-});
+
 
 // create post route
 app.post("/time", function(req,res){
@@ -77,7 +74,7 @@ app.get("/time/:id", function(req,res){
 //edit route
 
 app.get("/time/:id/edit", function(req,res){
-    time.findById(time.params.id,function(err,foundTime){
+    time.findById(req.params.id, function(err,foundTime){
       if (err){
         console.log(err);
       }else {
@@ -89,7 +86,7 @@ app.get("/time/:id/edit", function(req,res){
 //update route
 
 app.put("/time/:id", function(req,res){
-  time.findByIdAndUpdate(time.params.id, time.params.body, function(err){
+  time.findByIdAndUpdate(req.params.id, req.params.body, function(err){
     if (err){
       console.log(err);
     }else {
