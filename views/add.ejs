@@ -7,9 +7,23 @@
   </head>
   <body>
     <% include partials/nav%>
-    <form class="" action="index.html" method="post">
-
-    </form>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-md-offset-2">
+          <h1>Add Event</h1>
+          <form class="form-group" action="/time" method="POST">
+            <label for="name" class="text-left"> Event Name :</label>
+            <input class="form-control" type="text" name="name" value="">
+            <label for="name" class="text-left"> Event Image URL :</label>
+            <input class="form-control" type="text" name="image" value="">
+            <label for="name" class="text-left"> Event Description :</label>
+            <textarea class="form-control" type="textarea" name="des" value=""></textarea>
+            <br>
+            <button class="btn btn-default" type="submit" name="submit">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
     <% include partials/footer%>
   </body>
 </html>

@@ -5,40 +5,27 @@
     <title>Time</title>
     <!-- Latest compiled and minified CSS -->
     <% include partials/header%>
-    <script src="js/waterfall-light.js"></script>
-
-    <script >
-    	$(document).ready(function(){
-    		$('#box').waterfall();
-    	});
-    </script>
 
   </head>
   <body>
     <% include partials/nav%>
     <div class="container">
       <div class="row">
+        <% time.forEach(function(t){%>
         <div class="col-sm-6 col-md-4">
           <div class="thumbnail">
             <div class="caption"><p class="text-right text-success">Verified</p></div>
-            <img src="..." alt="..." style="height:200px;">
+            <img src="<%=t.image%>" alt="..." style="height:200px;">
             <div class="caption">
-              <h3>Thumbnail label</h3>
-              <p class="text-right"><a href="#" class="btn btn-default" role="button">Read more..</a></p>
-            </div>//caption
-          </div>//thumbnail
-        </div>//col-sm
+              <h3><%=t.name%></h3>
+              <p class="text-right"><a href="/time/<%=t.id%>" class="btn btn-default" role="button">Read more..</a></p>
+            </div>
+          </div>
+        </div>
+        <%})%>
       </div>
     </div>
 
-
     <% include partials/footer%>
-    <script src="https://code.jquery.com/jquery-2.2.4.js"
-    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-    crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
   </body>
 </html>

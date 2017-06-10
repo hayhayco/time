@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Detail</title>
+    <% include partials/header%>
+  </head>
+  <body>
+  <%include partials/nav%>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <img src="<%=time.image%>" alt="">
+      </div>
+      <div class="col-md-12">
+        <h1><%=time.name%></h1>
+        <p><%=time.des%></p>
+      </div>
+      <div class="col-md-12">
+        <a href="/time/<%=time.id%>/edit" class="btn btn-primary">Edit</a>
+
+      </div>
+    </div>
+  </div>
+  <% include partials/footer%>
+  </body>
+</html>
