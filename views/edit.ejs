@@ -11,13 +11,13 @@
       <div class="row">
         <div class="col-md-5 col-md-offset-2">
           <h1>Edit Event</h1>
-          <form class="form-group" action="/time" method="POST">
+          <form class="form-group" action="/time/<%=time._id%>?_method=PUT" method="POST">
             <label for="name" class="text-left"> Event Name :</label>
             <input class="form-control" type="text" name="name" value="<%=time.name%>">
             <label for="name" class="text-left"> Event Image URL :</label>
             <input class="form-control" type="text" name="image" value="<%=time.image%>">
             <label for="name" class="text-left"> Event Description :</label>
-            <textarea class="form-control" type="textarea" name="des" value="<%=time.des%>"></textarea>
+            <textarea class="form-control" type="textarea" name="des" value=""><%=time.des%></textarea>
             <br>
             <button class="btn btn-default" type="submit" name="submit">Save</button>
           </form>

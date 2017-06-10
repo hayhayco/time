@@ -18,7 +18,9 @@
       </div>
       <div class="col-md-12">
         <a href="/time/<%=time._id%>/edit" class="btn btn-primary">Edit</a>
-
+        <form action="/time/<%= time._id%>?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-danger" name="button">Delete</button>
+        </form>
       </div>
     </div>
   </div>

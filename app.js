@@ -78,21 +78,21 @@ app.get("/time/:id/edit", function(req,res){
       if (err){
         console.log(err);
       }else {
-        res.redirect("edit",{time:foundTime});
+        res.render("edit",{time:foundTime});
       }
-    })
+    });
 });
 
 //update route
 
 app.put("/time/:id", function(req,res){
-  time.findByIdAndUpdate(req.params.id, req.params.body, function(err){
+  time.findByIdAndUpdate(req.params.id, req.body.time, function(err, updateTime){
     if (err){
       console.log(err);
     }else {
       res.redirect(req.params.id)
-    }
-  })
+    };
+  });
 });
 
 app.delete("/time/:id", function(req,res){
