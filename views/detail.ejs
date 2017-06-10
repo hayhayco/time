@@ -16,7 +16,7 @@
         <h1><%=time.name%></h1>
         <p><%=time.des%></p>
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12 btn-group">
         <a href="/time/<%=time._id%>/edit" class="btn btn-primary">Edit</a>
         <form action="/time/<%= time._id%>?_method=DELETE" method="POST">
             <button type="submit" class="btn btn-danger" name="button">Delete</button>
