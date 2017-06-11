@@ -90,11 +90,13 @@ app.put("/time/:id", function(req,res){
     if (err){
       console.log(err);
     }else {
-      res.redirect(req.params.id)
+      console.log(updateTime);
+      res.redirect(req.params.id);
     };
   });
 });
 
+//delete route
 app.delete("/time/:id", function(req,res){
   time.findByIdAndRemove(req.params.id, function(err){
     if (err){
