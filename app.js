@@ -54,7 +54,7 @@ app.post("/time", function(req,res){
     if (err){
       console.log(err);
     }else {
-      res.redirect("/");
+    ya  res.redirect("/");
     }
   })
 })
@@ -74,6 +74,7 @@ app.get("/time/:id", function(req,res){
 //edit route
 
 app.get("/time/:id/edit", function(req,res){
+    time.find({"isdel":"0"});
     time.findById(req.params.id, function(err,foundTime){
       if (err){
         console.log(err);
@@ -86,11 +87,15 @@ app.get("/time/:id/edit", function(req,res){
 //update route
 
 app.put("/time/:id", function(req,res){
-  time.findByIdAndUpdate(req.params.id, req.body.time, function(err, updateTime){
+  var name = req.body.name;
+  var image = req.body.image;
+  var des = req.body.des;
+  var editTime = {name:name, image:image, des:des};
+
+  time.findByIdAndUpdate(req.params.id, editTime, function(err, updateTime){
     if (err){
       console.log(err);
     }else {
-      console.log(updateTime);
       res.redirect(req.params.id);
     };
   });
